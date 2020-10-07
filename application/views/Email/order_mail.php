@@ -33,7 +33,7 @@
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="background: #fff;padding: 0 20px">
                 <tr>
                     <td style="width: 80px">
-                        <img src="<?php echo base_url() . 'assets/images/logo73.png'; ?> " style="margin: 10px">
+                        <img src="<?php echo base_url() . 'assets/images/logo73.png'; ?> " style="margin: 10px;height: 100px;">
                     </td>
                     <td style="font-size: 30px;    font-family: serif;">
                         Class Apart <span style="color: red">Store</span>
