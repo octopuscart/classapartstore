@@ -24,8 +24,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $baselink = 'http://'.$_SERVER['SERVER_NAME'];
+$baselinkurl = $_SERVER['SERVER_NAME'];
+//$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/classApartStore' : $baselink.'/';
 
-$baselinkmain = strpos($baselink, '192.168') ? $baselink.'/classApartStore' : $baselink.'/';
+
+if (strpos($baselink, '192.168')) {
+    $islocal = true;
+    $baselinkmain = 'http://' . $baselinkurl . '/classApartStore';
+} elseif (strpos($baselink, 'localhost')) {
+    $islocal = true;
+    $baselinkmain = 'http://' . $baselinkurl . '/classApartStore';
+} else {
+    $baselinkmain = 'https://' . $baselinkurl . '/';
+}
+
+
+
 
 $config['base_url'] = $baselinkmain; 
 

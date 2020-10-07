@@ -111,7 +111,7 @@ class Api extends REST_Controller {
             $mxpricr = $attrdatak["maxprice"] + 1;
             unset($attrdatak["minprice"]);
             unset($attrdatak["maxprice"]);
-            $pricequery = " and (price between '$mnpricr' and '$mxpricr') ";
+            $pricequery = " and (price between $mnpricr and $mxpricr) ";
         }
 
         foreach ($attrdatak as $key => $atv) {
@@ -153,7 +153,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        $product_query = "select pt.id as product_id, pt.*
+         $product_query = "select pt.id as product_id, pt.*
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery";
         $product_result = $this->Product_model->query_exe($product_query);
 
