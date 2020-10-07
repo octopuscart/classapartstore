@@ -105,7 +105,7 @@ class Api extends REST_Controller {
         $products = [];
         $countpr = 0;
 
-
+        $pricequery = "";
         if (isset($attrdatak["minprice"])) {
             $mnpricr = $attrdatak["minprice"] - 1;
             $mxpricr = $attrdatak["maxprice"] + 1;
@@ -259,7 +259,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-         $product_query = "
+        $product_query = "
                        
     select * from(
     (select pt.id as product_id, pt.* from products as pt where keywords like '%$searchtext%') 
