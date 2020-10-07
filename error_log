@@ -1,0 +1,5 @@
+[29-Jul-2019 19:08:39 Etc/GMT] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/bookbnev/public_html/classapartstore.com/application/views/Product/productList.php on line 1
+[29-Jul-2019 19:08:48 Etc/GMT] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/bookbnev/public_html/classapartstore.com/application/views/Product/productList.php on line 1
+[29-Jul-2019 19:09:26 Etc/GMT] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/bookbnev/public_html/classapartstore.com/application/views/Product/productList.php on line 1
+[29-Jul-2019 19:09:31 Etc/GMT] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/bookbnev/public_html/classapartstore.com/application/views/Product/productList.php on line 1
+[29-Jul-2019 19:09:36 Etc/GMT] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/bookbnev/public_html/classapartstore.com/application/views/Product/productList.php on line 1
