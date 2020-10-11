@@ -58,7 +58,18 @@ $config['base_url'] = $baselinkmain;
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+if (strpos($baselink, '192.168')) {
+    $islocal = true;
+    $config['index_page'] = 'index.php';
+} elseif (strpos($baselink, 'localhost')) {
+    $islocal = true;
+    $config['index_page'] = 'index.php';
+} else {
+    $config['index_page'] = '';
+}
+
+
+
 
 /*
 |--------------------------------------------------------------------------
