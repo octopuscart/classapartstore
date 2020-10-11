@@ -488,9 +488,9 @@ foreach ($categorie_parent as $key => $value) {
 
                         <!-- Heading -->
 
-                        <h1 style="font-size: 40px">No Product Found</h1>
+                        <h1 style="font-size: 40px">No Products Listed Now</h1>
 
-                        <p>More Products Will Comming Soon</p>
+                        <p>Check Back Soon</p>
 
                         <hr class="dotted">
 
