@@ -211,7 +211,7 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
 
 
             $timeout(function () {
-                var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + $scope.globleCartData.total_quantity + '</b></a>';
+                var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity?$scope.globleCartData.total_quantity:0) + '</b></a>';
                 $(".logo-mobile-menu").after(mhref);
                 var mhref = '<a href="#" class="meanmenu-reveal search_open" style="right: 70px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-search"></i></a>';
                 $(".logo-mobile-menu").after(mhref);
