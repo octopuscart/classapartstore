@@ -168,8 +168,10 @@ $linklist = [];
                     <div class="container "> 
 
                         <!-- Heading -->
-                        <h1 style="font-size: 40px">No Product Found</h1>
-                        <p>Products Will Comming Soon</p>
+                        
+                        <h1 style="font-size: 40px">No Products Listed Now</h1>
+
+                        <p>Check Back Soon</p>
                         <hr class="dotted">
                         <a href="<?php echo site_url(); ?>" class="woocommerce-Button button btn-shop-now-fill">BACK TO HOME</a>
                     </div>
