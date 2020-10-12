@@ -115,9 +115,14 @@ where pa.product_id = $product_id group by attribute_value_id";
 
             $this->db->where('id', $productobj['user_id']);
             $query = $this->db->get('admin_users');
-            $userobj = $query->result_array()[0];
+            $userobj = $query->result_array();
+             $productobj['vendor'] = "CAPS";
+            if($userobj){
+                $userobj = $userobj[0];
+                $productobj['vendor'] = $userobj['first_name'] . " " . $userobj['last_name'];
+            }
 
-            $productobj['vendor'] = $userobj['first_name'] . " " . $userobj['last_name'];
+            
             return $productobj;
         } else {
             return FALSE;
