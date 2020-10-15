@@ -83,7 +83,7 @@ class Product_model extends CI_Model {
         $container = "";
         foreach ($category as $ckey => $cvalue) {
             $container .= $this->stringCategories($cvalue['id']);
-            $container .=", " . $cvalue['id'];
+            $container .= ", " . $cvalue['id'];
         }
         return $container;
     }
@@ -116,13 +116,13 @@ where pa.product_id = $product_id group by attribute_value_id";
             $this->db->where('id', $productobj['user_id']);
             $query = $this->db->get('admin_users');
             $userobj = $query->result_array();
-             $productobj['vendor'] = "CAPS";
-            if($userobj){
+            $productobj['vendor'] = "CAPS";
+            if ($userobj) {
                 $userobj = $userobj[0];
                 $productobj['vendor'] = $userobj['first_name'] . " " . $userobj['last_name'];
             }
 
-            
+
             return $productobj;
         } else {
             return FALSE;
@@ -454,6 +454,20 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         } else {
             return array();
         }
+    }
+
+    function productButtonsList($product_id) {
+        $product_query = "SELECT pbs.id, pbs.file_name, pbs.button_title, pb.button_link FROM product_buttons as pb 
+           join product_buttons_setting as pbs on pbs.id = pb.button_id
+           where pb.product_id = $product_id";
+        $query = $this->db->query($product_query);
+        $product_result_button = $query->result_array();
+        $productlistarray = array();
+        foreach ($product_result_button as $key => $value) {
+            $value['file_name'] = imageserverslider.'/'.$value['file_name'];
+            $productlistarray[$value['id']] = $value;
+        }
+        return $productlistarray;
     }
 
     function category_attribute_list($id) {

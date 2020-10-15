@@ -2,7 +2,7 @@
  Shop Cart product controllers
  */
 ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
-
+    
 
     var searchProducts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
@@ -102,15 +102,13 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
     $scope.updateCart = function (productobj, oper) {
         if (oper == 'sub') {
             if (productobj.quantity == 1) {
-            }
-            else {
+            } else {
                 productobj.quantity = Number(productobj.quantity) - 1;
             }
         }
         if (oper == 'add') {
             if (productobj.quantity > 5) {
-            }
-            else {
+            } else {
                 productobj.quantity = Number(productobj.quantity) + 1;
             }
         }
@@ -172,8 +170,7 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
     $scope.checkOrderTotal = function () {
         if ($scope.globleCartData.used_credit) {
             $scope.globleCartData.grand_total = $scope.globleCartData.total_price - $scope.globleCartData.used_credit;
-        }
-        else {
+        } else {
             $scope.globleCartData.used_credit = 0;
             $scope.globleCartData.grand_total = $scope.globleCartData.total_price;
             alert("Invalid Credit Entered.")
@@ -211,7 +208,8 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
 
 
             $timeout(function () {
-                var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity?$scope.globleCartData.total_quantity:0) + '</b></a>';
+            
+                var mhref = '<a href="#" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity ? $scope.globleCartData.total_quantity : 0) + '</b></a>';
                 $(".logo-mobile-menu").after(mhref);
                 var mhref = '<a href="#" class="meanmenu-reveal search_open" style="right: 70px;left: auto;text-align: center;text-indent: 0px;font-size: 18px;"><i class="fa fa-search"></i></a>';
                 $(".logo-mobile-menu").after(mhref);
@@ -242,7 +240,7 @@ ClassApartStore.controller('ShopController', function ($scope, $http, $timeout, 
                 });
 
 
-            }, 500);
+            }, 1500);
 
         }, 500);
 
@@ -280,15 +278,13 @@ ClassApartStore.controller('ProductDetails', function ($scope, $http, $timeout, 
         console.log(oper)
         if (oper == 'sub') {
             if ($scope.productver.quantity == 1) {
-            }
-            else {
+            } else {
                 $scope.productver.quantity = Number($scope.productver.quantity) - 1;
             }
         }
         if (oper == 'add') {
             if ($scope.productver.quantity > 5) {
-            }
-            else {
+            } else {
                 $scope.productver.quantity = Number($scope.productver.quantity) + 1;
             }
         }

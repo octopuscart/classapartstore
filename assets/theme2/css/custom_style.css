@@ -33,8 +33,11 @@ and open the template in the editor.
 }
 
 
-.product_image_back_grid{
-    height: 224px;
+.product_image_back_grid {
+    height: 350px;
+    background-color: #f1f1f1!important;
+    background-size: cover!important;
+    background-position: center!important;
 }
 
 .product_image_back_list{
@@ -313,7 +316,7 @@ b.barcomb-list {
 .tt-query,
 .tt-hint {
     width: 396px;
-    height: 30px;
+    /*height: 30px;*/
     padding: 8px 12px;
     font-size: 24px;
     line-height: 30px;

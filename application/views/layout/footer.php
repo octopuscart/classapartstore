@@ -146,15 +146,7 @@
                                                                 </ul>-->
                                 <ul class="inner-product-details-cart">
                                     <li><a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a></li>
-                                    <li>
-                                        <div class="input-group quantity-holder" id="quantity-holder">
-                                            <input type="text" placeholder="1" value="1" id="model_quantity" class="form-control quantity-input" name="quantity">
-                                            <div class="input-group-btn-vertical">
-                                                <button type="button" class="btn btn-default quantity-plus" ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-plus"></i></button>
-                                                <button type="button" class="btn btn-default quantity-minus"  ng-click="modelProductQuantity()"><i aria-hidden="true" class="fa fa-minus"></i></button>
-                                            </div>
-                                        </div>
-                                    </li>
+                                  
                                     <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
                                 </ul>
                             </div>

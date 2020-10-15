@@ -1,11 +1,8 @@
 <?php
-
 $this->load->view('layout/header');
-
 ?>
 
 <?php
-
 $linklist = [];
 
 foreach ($categorie_parent as $key => $value) {
@@ -17,12 +14,29 @@ foreach ($categorie_parent as $key => $value) {
     $liobj = "<li><a href='" . site_url("Product/ProductList/" . $catid) . "'>$cattitle</a></li>";
 
     array_push($linklist, $liobj);
-
 }
-
 ?>
 
+<style>
 
+    .extrabuttonimage img {
+        height: 38px;
+        width: 38px;
+        margin: 5px 5px;
+        background: #fff;
+    }
+    .extrabuttonimage{
+
+    }
+    
+    .extrabutton h3{
+            font-size: 12px;
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+    margin-top: 20px;
+    }
+</style>
 
 
 
@@ -41,9 +55,7 @@ foreach ($categorie_parent as $key => $value) {
                     <h1>
 
                         <?php
-
                         echo count($linklist) ? $cattitle : 'Shop Now';
-
                         ?>
 
                     </h1>
@@ -55,9 +67,7 @@ foreach ($categorie_parent as $key => $value) {
                         <?php echo count($linklist) ? "<b class='barcomb-list'>/</b>" : ''; ?>
 
                         <?php
-
                         echo implode("<b class='barcomb-list'>/</b>", $linklist)
-
                         ?>
 
                     </ul>
@@ -89,9 +99,7 @@ foreach ($categorie_parent as $key => $value) {
 
 
                     <?php
-
                     if (count($categories)) {
-
                         ?>
 
                         <h2 class="title-sidebar">SHOP CATEGORIES</h2>
@@ -101,11 +109,9 @@ foreach ($categorie_parent as $key => $value) {
                             <ul>
 
                                 <?php
-
                                 foreach ($categories as $key => $value) {
 
                                     $subcategories = $value['sub_category'];
-
                                     ?>  
 
 
@@ -121,9 +127,7 @@ foreach ($categorie_parent as $key => $value) {
 
 
                                             <?php
-
                                             if (count($subcategories)) {
-
                                                 ?>
 
                                                 <span>
@@ -133,25 +137,19 @@ foreach ($categorie_parent as $key => $value) {
                                                 </span>
 
                                                 <?php
-
                                             }
-
                                             ?>
 
                                         </a>
 
                                         <?php
-
                                         if (count($subcategories)) {
-
                                             ?>
 
                                             <ul class="dropdown-menu">
 
                                                 <?php
-
                                                 foreach ($subcategories as $key1 => $value1) {
-
                                                     ?>
 
                                                     <li>
@@ -165,25 +163,19 @@ foreach ($categorie_parent as $key => $value) {
                                                     </li>
 
                                                     <?php
-
                                                 }
-
                                                 ?>
 
                                             </ul>
 
                                             <?php
-
                                         }
-
                                         ?>
 
                                     </li>
 
                                     <?php
-
                                 }
-
                                 ?>   
 
                             </ul>
@@ -191,9 +183,7 @@ foreach ($categorie_parent as $key => $value) {
                         </div>
 
                         <?php
-
                     }
-
                     ?>
 
                     <h2 class="title-sidebar product_attr_h2">FILTER BY PRICE</h2>
@@ -331,8 +321,12 @@ foreach ($categorie_parent as $key => $value) {
                                         <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
 
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-
+                                        <div class="extrabutton">
+                                            <h3>Buy From</h3>
+                                            <a href="{{button.button_link}}" target="_blank" ng-repeat="button in product.buttonlist" class="extrabuttonimage"><img src="{{button.file_name}}"></a>
+                                        </div>
                                     </ul>
+
 
                                     <div class="product-img-holder">
 
@@ -385,57 +379,57 @@ foreach ($categorie_parent as $key => $value) {
                         <div role="tabpanel" class="tab-pane clear products-container" id="list-view">
                             <div class="row1">
 
-                            <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products" style="    min-height: 275px!important;">
+                                <div class="col-lg-12 col-md-12 col-sm-4 col-xs-12 product_list_style"  ng-repeat="(k, product) in productResults.products" style="    min-height: 275px!important;">
 
-                                <div class="product-box2" style="    height: auto!important;">
+                                    <div class="product-box2" style="    height: auto!important;">
 
-                                    <div class="media">
+                                        <div class="media">
 
-                                        <a class="pull-left" href="#">
+                                            <a class="pull-left" href="#">
 
                                             <!--<img class="img-responsive" src="img/product/grid/1.jpg" alt="product" />-->
 
-                                            <div class="product_image_back product_image_back_list" style="background: url(<?php echo imageserver; ?>{{product.file_name}});"></div>
+                                                <div class="product_image_back product_image_back_list" style="background: url(<?php echo imageserver; ?>{{product.file_name}});"></div>
 
 
 
-                                        </a>
+                                            </a>
 
-                                        <div class="media-body">
+                                            <div class="media-body">
 
-                                            <div class="product-box2-content ">
+                                                <div class="product-box2-content ">
 
-                                                <h3><a href="#">{{product.title}} </a></h3>
+                                                    <h3><a href="#">{{product.title}} </a></h3>
 
-                                                <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+                                                    <span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
-                                                <p>
+                                                    <p>
 
-                                                    {{product.short_description}}
+                                                        {{product.short_description}}
 
-                                                    <br/>
+                                                        <br/>
 
-                                                    {{product.attr}} 
+                                                        {{product.attr}} 
 
-                                                </p>
+                                                    </p>
 
-                                            </div>
+                                                </div>
 
-                                            <ul class="product-box2-cart" style="    margin-top: 0px;">
+                                                <ul class="product-box2-cart" style="    margin-top: 0px;">
 
-                                                <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
+                                                    <li><a href="#" ng-click="addToCart(product.product_id, 1)">Add To Cart</a></li>
 
                                                 <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
 
-                                                <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                                    <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
 
-                                            </ul>
+                                                </ul>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
-
-                                </div>
                                 </div>
 
                             </div>
@@ -533,7 +527,5 @@ foreach ($categorie_parent as $key => $value) {
 
 
 <?php
-
 $this->load->view('layout/footer');
-
 ?>

@@ -153,7 +153,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-         $product_query = "select pt.id as product_id, pt.*
+        $product_query = "select pt.id as product_id, pt.*
             from products as pt where pt.category_id in ($categoriesString) $pricequery $proquery";
         $product_result = $this->Product_model->query_exe($product_query);
 
@@ -165,6 +165,9 @@ class Api extends REST_Controller {
 
         foreach ($product_result as $key => $value) {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
+
+            $value['buttonlist'] = $this->Product_model->productButtonsList($value['product_id']);
+
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
             array_push($productListFinal, $value);
