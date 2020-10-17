@@ -462,10 +462,10 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
            where pb.product_id = $product_id";
         $query = $this->db->query($product_query);
         $product_result_button = $query->result_array();
-        $productlistarray = array();
+        $productlistarray = [];
         foreach ($product_result_button as $key => $value) {
             $value['file_name'] = imageserverslider.'/'.$value['file_name'];
-            $productlistarray[$value['id']] = $value;
+            array_push($productlistarray, $value);
         }
         return $productlistarray;
     }

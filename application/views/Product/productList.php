@@ -321,7 +321,7 @@ foreach ($categorie_parent as $key => $value) {
                                         <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
 
                                         <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="viewShortDetails(product)"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                        <div class="extrabutton">
+                                        <div class="extrabutton" ng-if="product.buttonlist.length">
                                             <h3>Buy From</h3>
                                             <a href="{{button.button_link}}" target="_blank" ng-repeat="button in product.buttonlist" class="extrabuttonimage"><img src="{{button.file_name}}"></a>
                                         </div>

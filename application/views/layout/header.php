@@ -59,16 +59,17 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
-            
-            
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-2246837719135984",
-          enable_page_level_ads: true
-     });
-</script>
+
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2246837719135984",
+                    enable_page_level_ads: true
+            });
+           
+        </script>
 
     </head>
 
@@ -81,11 +82,8 @@
             <!-- Add your site or application content here -->
             <!-- Header Area Start Here -->
             <!--LOADER--> 
-            <div id="loader">
-                <div class="position-center-center">
-                    <div class="loader"></div>
-                </div>
-            </div>
+
+            <div id="preloader"></div>
 
 
             <script>
@@ -93,11 +91,11 @@
                 //$interpolateProvider.startSymbol('{$');
                 //$interpolateProvider.endSymbol('$}');
                 $httpProvider.defaults.headers.common = {};
-                        $httpProvider.defaults.headers.post = {};
+                $httpProvider.defaults.headers.post = {};
                 });
-                        var baseurl = "<?php echo base_url(); ?>index.php/";
-                        var imageurlg = "<?php echo imageserver; ?>";
-                        var avaiblecredits = 0;</script>
+                var baseurl = "<?php echo base_url(); ?>index.php/";
+                var imageurlg = "<?php echo imageserver; ?>";
+                var avaiblecredits = 0;</script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
@@ -347,9 +345,9 @@
             <div class="modal fade model_search" id="searchModel" tabindex="-1" role="dialog" aria-labelledby="searchModelLabel">
                 <div class="modal-dialog" role="document" style="margin-top: 60px;">
                     <div class="modal-content mobile_model_search">
-                         <div class="modal-header">
+                        <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                           
+
                         </div>
                         <div class="modal-body">
 

@@ -9,7 +9,7 @@
                             <h3>Information</h3>
                             <ul class="info-list">
                                 <li><a href="#">About us</a></li>
-                               
+
                                 <li><a href="#">Privacy policy</a></li>
                                 <li><a href="#">Terms & condition</a></li>
                             </ul>
@@ -48,7 +48,7 @@
                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 
                             </ul>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                                                                 </ul>-->
                                 <ul class="inner-product-details-cart">
                                     <li><a href="#" ng-click="addToCart(projectDetailsModel.productobj.product_id, projectDetailsModel.quantity)">Add To Cart</a></li>
-                                  
-                                    <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
+
+  <!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>-->
                                 </ul>
                             </div>
                         </div>
@@ -221,7 +221,15 @@
 
 
 <script>
-                                                    $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
+                                        $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
+
+                                        $(document).ready(function() {
+                                            console.log("chjksfjskdfdsf")
+                                            // Page Preloader
+                                            $('#preloader').fadeOut('slow', function () {
+                                                $(this).remove();
+                                            });
+                                        });
 </script>
 
 
