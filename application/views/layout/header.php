@@ -95,7 +95,17 @@
                 });
                 var baseurl = "<?php echo base_url(); ?>index.php/";
                 var imageurlg = "<?php echo imageserver; ?>";
-                var avaiblecredits = 0;</script>
+                var avaiblecredits = 0;
+                $(document).ready(function () {
+                setTimeout(function () {
+                // Page Preloader
+                $('#preloader').fadeOut('slow', function () {
+                $(this).remove();
+                });
+                }, 1500)
+
+                });
+            </script>
 
             <style>
                 .ownmenu .dropdown.megamenu .dropdown-menu li:last-child{
