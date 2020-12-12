@@ -34,6 +34,9 @@ class Product extends CI_Controller {
     function ProductDetails($product_id) {
         $prodct_details = $this->Product_model->productDetails($product_id);
         if ($prodct_details) {
+            
+             $data['buttonlist'] = $this->Product_model->productButtonsList($product_id);
+            
             $prodct_details_attrs = $this->Product_model->productDetailsVariants($product_id);
 
             $data['product_attr_variant'] = $prodct_details_attrs;

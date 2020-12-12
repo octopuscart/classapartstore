@@ -12,6 +12,15 @@ foreach ($categorie_parent as $key => $value) {
     array_push($linklist, $liobj);
 }
 ?>
+<style>
+
+    a.extrabuttonimage {
+        float: left;
+        width: 100px;
+        border: 1px solid #a5a0a07d;
+        margin-right: 14px;
+    }
+</style>
 
 
 
@@ -155,28 +164,28 @@ foreach ($categorie_parent as $key => $value) {
                             $productvrnt = $product_attr_variant[$value['attribute']];
                             if (count($productvrnt) > 1) {
                                 ?>
-                                                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                                                <ul class="more-option">
-                                                                                                                                                                                    <li>
-                                                                                                                                                                                        <div class="form-group">
-                                                                                                                                                                                            <div class="custom-select">
-                                                                                                                                                                                                 COLOR 
-                                                                                                                                                                                                <p class="product_detail_attr"><?php echo $value['attribute']; ?></p>
-                                                                                                                                                                                                <select  class='select2'>
+                                                                                                                                                                                                            <div class="col-md-6">
+                                                                                                                                                                                                                <ul class="more-option">
+                                                                                                                                                                                                                    <li>
+                                                                                                                                                                                                                        <div class="form-group">
+                                                                                                                                                                                                                            <div class="custom-select">
+                                                                                                                                                                                                                                 COLOR 
+                                                                                                                                                                                                                                <p class="product_detail_attr"><?php echo $value['attribute']; ?></p>
+                                                                                                                                                                                                                                <select  class='select2'>
                                 <?php
                                 foreach ($product_attr_variant[$value['attribute']] as $kat => $vat) {
                                     ?>
                                     <?php //echo $value['attribute_value']; ?>
-                                                                                                                                                                                                                                                                <option <?php echo $vat['attribute_value'] == $value['attribute_value'] ? 'selected' : ''; ?> value="<?php echo $vat['product_id']; ?>" ><?php echo $vat['attribute_value']; ?></option>
+                                                                                                                                                                                                                                                                                                                <option <?php echo $vat['attribute_value'] == $value['attribute_value'] ? 'selected' : ''; ?> value="<?php echo $vat['product_id']; ?>" ><?php echo $vat['attribute_value']; ?></option>
                                     <?php
                                 }
                                 ?>
-                                                                                                                                                                                                </select>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                    </li>
-                                                                                                                                                                                </ul>
-                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                </select>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                            </div>
                                 <?php
                             }
                         }
@@ -199,6 +208,13 @@ foreach ($categorie_parent as $key => $value) {
     <!--                            <li><a href="#"><i aria-hidden="true" class="fa fa-heart-o"></i></a></li>
                         <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                         -->
+                    </ul>
+
+                    <ul>
+                        <?php foreach ($buttonlist as $key => $value) { ?>
+                            <a href = "<?php echo $value['button_link']; ?>" target = "_blank" class = "extrabuttonimage"><img src = "<?php echo $value['file_name']; ?>"></a>
+                        <?php }
+                        ?>
                     </ul>
 
 
@@ -254,7 +270,7 @@ foreach ($categorie_parent as $key => $value) {
                             <div class="tab-pane fade in spacification_product_details" id="videodescription">
                                 <p class="">
                                 <center>
-                                    <iframe width="800" height="400" src="<?php echo $product_details['video_link']; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    <iframe width="100%" height="400" src="<?php echo $product_details['video_link']; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </center>
                                 </p>
                             </div>

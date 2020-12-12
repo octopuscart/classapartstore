@@ -223,12 +223,14 @@
 <script>
                                         $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
 
-                                        $(document).ready(function() {
-                                            console.log("chjksfjskdfdsf")
-                                            // Page Preloader
-                                            $('#preloader').fadeOut('slow', function () {
-                                                $(this).remove();
-                                            });
+                                        $(document).ready(function () {
+                                            setTimeout(function () {
+                                                // Page Preloader
+                                                $('#preloader').fadeOut('slow', function () {
+                                                    $(this).remove();
+                                                });
+                                            }, 1500)
+
                                         });
 </script>
 
