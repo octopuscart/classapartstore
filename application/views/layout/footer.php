@@ -168,9 +168,7 @@
 <!-- Preloader End Here -->
 
 
-<!-- jquery-->
-<script src="<?php echo base_url(); ?>assets/theme2/js/vendor/jquery-2.2.4.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 
