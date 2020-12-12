@@ -221,8 +221,6 @@
 
 
 <script>
-                                        $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
-
                                         $(document).ready(function () {
                                             setTimeout(function () {
                                                 // Page Preloader
@@ -232,6 +230,9 @@
                                             }, 1500)
 
                                         });
+                                        $('nav#dropdown').meanmenu({siteLogo: "<a href='/' class='logo-mobile-menu'><img src='<?php echo base_url() . 'assets/images/logo73.png'; ?>' style='    height: 35px;' /></a>"});
+
+
 </script>
 
 
